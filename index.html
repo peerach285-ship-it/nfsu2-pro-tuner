@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#08111f"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="NFSU2 PRO TUNER - ตัวจัดการโปรไฟล์จูนรถสำหรับ iPhone">
+<link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-180.png"><link rel="stylesheet" href="style.css">
+<title>NFSU2 PRO TUNER</title>
+</head>
+<body>
+<header class="top"><div class="eyebrow">IPHONE EDITION · v0.2.0</div><h1>NFSU2 <span>PRO TUNER</span></h1><p>Mobile tuning profile studio</p><div class="statusline"><i></i><span id="storageStatus">LOCAL PROFILE STORAGE</span></div></header>
+<main>
+<nav class="tabs"><button class="tab active" data-tab="tune">TUNER</button><button class="tab" data-tab="garage">GARAGE</button><button class="tab" data-tab="about">INFO</button></nav>
+<section id="tune" class="panel active">
+<div class="sectionhead"><div><small>ACTIVE PROFILE</small><h2>Vehicle Setup</h2></div><span class="pill">LOCAL</span></div>
+<label>ชื่อโปรไฟล์<input id="name" value="My Tune" maxlength="60"></label>
+<div class="grid2"><label>ขอบเขตรถ<select id="scope"><option value="all">รถทุกคัน</option><option value="selected">เลือกตาม Vehicle ID</option></select></label><label>Vehicle IDs<input id="vehicles" placeholder="เช่น 0, 1, 2"></label></div>
+<div class="card"><div class="cardhead"><h3>PERFORMANCE</h3><span>POWER</span></div><div class="grid2"><label>Horsepower (HP)<input id="hp" type="number" min="0" step="1"></label><label>Torque<input id="torque" type="number" min="0" step="1"></label><label>ECU<input id="ecu" type="number" min="0" step="1"></label><label>Turbo<input id="turbo" type="number" min="0" step="1"></label></div></div>
+<div class="card"><div class="cardhead"><h3>GEARING</h3><span>TRANSMISSION</span></div><label>Final Drive<input id="finalDrive" type="number" min="0.01" step="0.01"></label><div class="grid3" id="gears"></div></div>
+<div class="card"><div class="cardhead"><h3>SUSPENSION</h3><span>CHASSIS</span></div><div class="grid2"><label>Ride Height<input id="rideHeight" type="number" step="0.1"></label><label>Spring Rate<input id="springRate" type="number" step="0.1"></label><label>Damping<input id="damping" type="number" step="0.1"></label><label>Front Camber<input id="camberFront" type="number" step="0.1"></label><label>Rear Camber<input id="camberRear" type="number" step="0.1"></label><label>Front Toe<input id="toeFront" type="number" step="0.1"></label><label>Rear Toe<input id="toeRear" type="number" step="0.1"></label></div></div>
+<div class="card"><div class="cardhead"><h3>HANDLING</h3><span>CONTROL</span></div><div class="grid3"><label>Steering<input id="steering" type="number" step="1"></label><label>Traction<input id="traction" type="number" step="1"></label><label>Brake Bias<input id="brakeBias" type="number" step="1"></label></div></div>
+<label>บันทึกเพิ่มเติม<textarea id="notes" rows="3" placeholder="รายละเอียดการจูน..."></textarea></label>
+<div class="actions"><button id="save" class="primary">บันทึกโปรไฟล์</button><button id="export">ส่งออก JSON</button><button id="import">นำเข้า JSON</button><input id="file" type="file" accept="application/json,.json" hidden></div><p id="status" class="message" role="status">พร้อมใช้งาน</p>
+</section>
+<section id="garage" class="panel"><div class="sectionhead"><div><small>PROFILE MANAGER</small><h2>My Garage</h2></div></div><p class="hint">โปรไฟล์ถูกจัดเก็บในพื้นที่เว็บไซต์ของ Orion บนอุปกรณ์นี้</p><div id="profileList" class="profilelist"></div><button id="newProfile" class="primary wide">＋ สร้างโปรไฟล์ใหม่</button></section>
+<section id="about" class="panel"><div class="sectionhead"><div><small>PROJECT STATUS</small><h2>About this build</h2></div></div><div class="card"><h3>NFSU2 PRO TUNER · 0.2.0</h3><p>รุ่น iPhone ออกแบบเป็นเว็บแอป (PWA) ใช้หน้าจอสัมผัสและพื้นที่จัดเก็บในเครื่อง ไม่ต้องติดตั้ง Chrome Extension</p></div><div class="notice"><b>ข้อจำกัดสำคัญ</b><br>รุ่นนี้สร้างและจัดการโปรไฟล์จูนเท่านั้น ยังไม่แก้ค่าภายในเกมโดยตรง การเปลี่ยน HP/ECU/Turbo ในหน้านี้ไม่ได้ทำให้เกมเปลี่ยนสมรรถนะเอง การเชื่อมเกม NFSU2.xyz ต้องพัฒนาและทดสอบตัวเชื่อมแยกต่างหาก</div><div class="card"><h3>ติดตั้งบนหน้าจอ iPhone</h3><ol><li>เปิดเว็บแอปนี้ผ่าน Orion</li><li>แตะเมนู Share หรือเมนูของเบราว์เซอร์</li><li>เลือก Add to Home Screen หากมีให้ใช้งาน</li><li>เปิดจากไอคอน NFSU2 PRO TUNER</li></ol></div></section>
+</main><footer>INDEPENDENT PROJECT · NO HP PRO SERVER</footer>
+<script src="core.js"></script><script src="app.js"></script>
+</body></html>
